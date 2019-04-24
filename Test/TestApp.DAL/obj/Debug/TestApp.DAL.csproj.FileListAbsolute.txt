@@ -1,0 +1,12 @@
+E:\!Study\2sem\!\Test\TestApp.DAL\bin\Debug\TestApp.DAL.dll
+E:\!Study\2sem\!\Test\TestApp.DAL\bin\Debug\TestApp.DAL.pdb
+E:\!Study\2sem\!\Test\TestApp.DAL\obj\Debug\TestApp.DAL.csprojAssemblyReference.cache
+E:\!Study\2sem\!\Test\TestApp.DAL\obj\Debug\TestApp.DAL.csproj.CoreCompileInputs.cache
+E:\!Study\2sem\!\Test\TestApp.DAL\obj\Debug\TestApp.DAL.dll
+E:\!Study\2sem\!\Test\TestApp.DAL\obj\Debug\TestApp.DAL.pdb
+E:\!\Test\TestApp.DAL\bin\Debug\TestApp.DAL.dll
+E:\!\Test\TestApp.DAL\bin\Debug\TestApp.DAL.pdb
+E:\!\Test\TestApp.DAL\obj\Debug\TestApp.DAL.csprojAssemblyReference.cache
+E:\!\Test\TestApp.DAL\obj\Debug\TestApp.DAL.csproj.CoreCompileInputs.cache
+E:\!\Test\TestApp.DAL\obj\Debug\TestApp.DAL.dll
+E:\!\Test\TestApp.DAL\obj\Debug\TestApp.DAL.pdb
