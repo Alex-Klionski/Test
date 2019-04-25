@@ -19,6 +19,7 @@ namespace TestApp.DAL
 
         public static string connectString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source= database.mdb";
         private OleDbConnection myConnection;
+
         private int Amount()
         {
             int count = 0;
@@ -35,9 +36,10 @@ namespace TestApp.DAL
             return count;
         }
 
-        public QuestionsBase(string[] ArrayQuestions, string[] ArrayRight, string[] ArrayReccommend, string[] ArrayVar1, string[] ArrayVar2, string[] ArrayVar3, string[] ArrayPicture)
+        public QuestionsBase(out string[] ArrayQuestions, out string[] ArrayRight, out string[] ArrayReccommend, out string[] ArrayVar1, out string[] ArrayVar2, out string[] ArrayVar3, out string[] ArrayPicture)
         {
             Count = Amount();
+
             myConnection = new OleDbConnection(connectString);
             myConnection.Open();
             string query = "SELECT q_question, q_recomend, q_answer, q_var1, q_var2, q_var3, q_image FROM Questions ORDER BY q_id";
@@ -68,6 +70,7 @@ namespace TestApp.DAL
 
 
         }
+
         public void QuestionRand(out string[] ArrayQuestions, out string[] ArrayRight, out string[] ArrayReccommend, out string[] ArrayVar1, out string[] ArrayVar2, out string[] ArrayVar3, out string[] ArrayPicture)
         {
             Count = 10;
@@ -81,10 +84,12 @@ namespace TestApp.DAL
 
             Random rand = new Random();
             int[] array = new int[Count];
+
             for (int i = 0; i < Count; i++)
             {
                 array[i] = i;
             }
+
             for (int i = 0; i < array.Length; i++)
             {
                 int tmp = array[i];
@@ -93,6 +98,7 @@ namespace TestApp.DAL
                 array[r] = tmp;
 
             }
+
             myConnection = new OleDbConnection(connectString);
             myConnection.Open();
             string query = "SELECT q_question, q_recomend, q_answer, q_var1, q_var2, q_var3, q_image FROM Questions ORDER BY q_id ";
@@ -116,11 +122,8 @@ namespace TestApp.DAL
                 ArrayPicture[array[k]] = (string)reader[6];
                 k++;
             }
-
             reader.Close();
             myConnection.Close();
-
-
         }
     }
 }

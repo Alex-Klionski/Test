@@ -89,7 +89,7 @@
   <xs:element name="usersDataSet" msdata:IsDataSet="true" msdata:CaseSensitive="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="usersDataSet" msprop:Generator_UserDSName="usersDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="user" msprop:Generator_TableClassName="userDataTable" msprop:Generator_TableVarName="tableuser" msprop:Generator_RowChangedName="userRowChanged" msprop:Generator_TablePropName="user" msprop:Generator_RowDeletingName="userRowDeleting" msprop:Generator_RowChangingName="userRowChanging" msprop:Generator_RowEvHandlerName="userRowChangeEventHandler" msprop:Generator_RowDeletedName="userRowDeleted" msprop:Generator_RowClassName="userRow" msprop:Generator_UserTableName="user" msprop:Generator_RowEvArgName="userRowChangeEvent">
+        <xs:element name="user" msprop:Generator_TableClassName="userDataTable" msprop:Generator_TableVarName="tableuser" msprop:Generator_TablePropName="user" msprop:Generator_RowDeletingName="userRowDeleting" msprop:Generator_RowChangingName="userRowChanging" msprop:Generator_RowEvHandlerName="userRowChangeEventHandler" msprop:Generator_RowDeletedName="userRowDeleted" msprop:Generator_UserTableName="user" msprop:Generator_RowChangedName="userRowChanged" msprop:Generator_RowEvArgName="userRowChangeEvent" msprop:Generator_RowClassName="userRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="userID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnuserID" msprop:Generator_ColumnPropNameInRow="userID" msprop:Generator_ColumnPropNameInTable="userIDColumn" msprop:Generator_UserColumnName="userID" type="xs:int" />
@@ -128,6 +128,10 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="right" msprop:Generator_ColumnVarNameInTable="columnright" msprop:Generator_ColumnPropNameInRow="right" msprop:Generator_ColumnPropNameInTable="rightColumn" msprop:Generator_UserColumnName="right" type="xs:string" minOccurs="0" />
+              <xs:element name="notright" msprop:Generator_ColumnVarNameInTable="columnnotright" msprop:Generator_ColumnPropNameInRow="notright" msprop:Generator_ColumnPropNameInTable="notrightColumn" msprop:Generator_UserColumnName="notright" type="xs:string" minOccurs="0" />
+              <xs:element name="pass" msprop:Generator_ColumnVarNameInTable="columnpass" msprop:Generator_ColumnPropNameInRow="pass" msprop:Generator_ColumnPropNameInTable="passColumn" msprop:Generator_UserColumnName="pass" type="xs:string" minOccurs="0" />
+              <xs:element name="notpass" msprop:Generator_ColumnVarNameInTable="columnnotpass" msprop:Generator_ColumnPropNameInRow="notpass" msprop:Generator_ColumnPropNameInTable="notpassColumn" msprop:Generator_UserColumnName="notpass" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

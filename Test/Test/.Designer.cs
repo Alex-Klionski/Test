@@ -68,8 +68,7 @@
             // 
             // listQuestion
             // 
-            this.listQuestion.Enabled = false;
-            this.listQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listQuestion.FormattingEnabled = true;
             this.listQuestion.Location = new System.Drawing.Point(209, 12);
             this.listQuestion.Name = "listQuestion";

@@ -25,7 +25,7 @@ namespace Test
         {          
             InitializeComponent();
             this.KeyPreview = true;
-            this.btnNext.Click += new EventHandler(firstAction); // Двойное нажатие
+            this.btnNext.Click += new EventHandler(FirstAction); // Двойное нажатие
 
             InitTest();
         }
@@ -33,7 +33,6 @@ namespace Test
         private void InitTest()
         {
             labelNumberOfQuestions.Text = question.GetNumberOfQuestions().ToString();
-
             groupQuestion.Visible = true;
             Timer();
             btnNext.Text = "Следующий вопрос";
@@ -160,12 +159,13 @@ namespace Test
 
         private void ShowQuestion()
         {
+            labelNumber.Text = question.GetI().ToString();
             btnNext.Text = "Ответить";
             listQuestion.Items.Clear();
             RadioChecked();
             PictureCheck();
             listQuestion.Items.Add(question.GetArrayQuestion());
-            picture();
+            Picture();
             RadioTags(rand.Next(1, 6));
         }
 
@@ -183,10 +183,8 @@ namespace Test
             }
         }
 
-        private void firstAction(object sender, EventArgs e)
+        private void FirstAction(object sender, EventArgs e)
         {
-            labelNumber.Text = question.GetI().ToString();
-
             if (question.GetAmountQuestion() < 0) { InitTest(); return; }
             if (!(radioAnswer1.Checked || radioAnswer2.Checked || radioAnswer3.Checked || radioAnswer4.Checked))
             {
@@ -232,21 +230,21 @@ namespace Test
                 return;
             }
 
-            this.btnNext.Click -= new EventHandler(firstAction);
+            this.btnNext.Click -= new EventHandler(FirstAction);
             btnNext.Text = "Следующий вопрос";
             groupQuestion.Enabled = false;
-            this.btnNext.Click += new EventHandler(secondAction);
+            this.btnNext.Click += new EventHandler(SecondAction);
         }
 
-        private void secondAction(object sender, EventArgs e)
+        private void SecondAction(object sender, EventArgs e)
         {
             groupQuestion.Enabled = true;
             ShowQuestion();
-            this.btnNext.Click -= new EventHandler(secondAction);
-            this.btnNext.Click += new EventHandler(firstAction);
+            this.btnNext.Click -= new EventHandler(SecondAction);
+            this.btnNext.Click += new EventHandler(FirstAction);
         }
 
-        private void picture()
+        private void Picture()
         {
             if (question.GetArrayPicture() != "-")
             {

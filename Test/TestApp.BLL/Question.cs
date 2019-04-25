@@ -10,12 +10,12 @@ namespace TestApp.BLL
 {
     public class Question : QuestionsBase
     {
-        public Question() : base(ArrayQuestions,ArrayRight, ArrayReccommend, ArrayVar1, ArrayVar2, ArrayVar3,  ArrayPicture)
+        public Question() : base(out ArrayQuestions, out ArrayRight, out ArrayReccommend, out ArrayVar1, out ArrayVar2, out ArrayVar3, out ArrayPicture)
         {
 
         }
         private new static string[] ArrayQuestions, ArrayRight, ArrayReccommend, ArrayVar1, ArrayVar2, ArrayVar3, ArrayPicture;
-        QuestionsBase questionBase = new QuestionsBase(ArrayQuestions, ArrayRight, ArrayReccommend, ArrayVar1, ArrayVar2, ArrayVar3, ArrayPicture);
+        QuestionsBase questionBase = new QuestionsBase(out ArrayQuestions, out ArrayRight, out ArrayReccommend, out ArrayVar1, out ArrayVar2, out ArrayVar3, out ArrayPicture);
 
         private static int amountQuestion, correctAnswer, NotCorrentAnswer;
         int i = 0;

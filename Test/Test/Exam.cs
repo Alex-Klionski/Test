@@ -19,12 +19,14 @@ namespace Test
         
         static Random rand = new Random();
 
+        private int quick = 600;
+
         public Exam()
         {
             InitializeComponent();
-            this.KeyPreview = true;
 
-            this.btnNext.Click += new EventHandler(firstAction); // Двойное нажатие
+            this.KeyPreview = true;
+            this.btnNext.Click += new EventHandler(FirstAction); // Двойное нажатие
 
             InitTest();
         }
@@ -106,7 +108,7 @@ namespace Test
             RadioChecked();
             PictureCheck();
             listQuestion.Items.Add(question.GetArrayQuestion());
-            picture();
+            Picture();
             RadioTags(rand.Next(1, 6));
         }
 
@@ -141,7 +143,7 @@ namespace Test
             labelCorrect.Visible = false;
         }
 
-        private void firstAction(object sender, EventArgs e)
+        private void FirstAction(object sender, EventArgs e)
         {
             if (question.GetAmountQuestion() < 0) { InitTest(); return; }
             if (!(radioAnswer1.Checked || radioAnswer2.Checked || radioAnswer3.Checked || radioAnswer4.Checked))
@@ -183,10 +185,10 @@ namespace Test
                 return;
             }
 
-            this.btnNext.Click -= new EventHandler(firstAction);
+            this.btnNext.Click -= new EventHandler(FirstAction);
             btnNext.Text = "Следующий вопрос";
             groupQuestion.Enabled = false;
-            this.btnNext.Click += new EventHandler(secondAction);
+            this.btnNext.Click += new EventHandler(SecondAction);
         }
         private void PanelPoint()
         {
@@ -212,6 +214,7 @@ namespace Test
             if (question.I() == 9 && panelError.Visible == true) { Point9.BackColor = Color.Red; }
             if (question.I() == 10 && panelError.Visible == true) { Point10.BackColor = Color.Red; }
         }
+
         private void GetPass()
         {
             SoundPlayer passExam = new SoundPlayer("E:\\!Study\\2sem\\!\\Sounds\\passExam.wav");
@@ -222,7 +225,7 @@ namespace Test
             labelTimerMin.Visible = false;
             btnNext.Text = "Отдыхай";
             GroupBoxCorrectFalse();
-            this.btnNext.Click -= new EventHandler(firstAction);
+            this.btnNext.Click -= new EventHandler(FirstAction);
             this.btnNext.Click += new EventHandler(ActionClose);
             groupQuestion.Visible = false;
             groupBoxPass.Visible = true;
@@ -231,6 +234,7 @@ namespace Test
             question.GetNull();
             return;
         }
+
         private void GetFail()
         {
             SoundPlayer failExam = new SoundPlayer("E:\\!Study\\2sem\\!\\Sounds\\failExam.wav");
@@ -242,21 +246,22 @@ namespace Test
             groupQuestion.Visible = false;
             groupBoxNotPass.Visible = true;
             groupBoxPass.Visible = false;
-            this.btnNext.Click -= new EventHandler(firstAction);
+            this.btnNext.Click -= new EventHandler(FirstAction);
             this.btnNext.Click += new EventHandler(ActionClose);
             question.GetNull();
             PictureCheck();
             return;
         }
-        private void secondAction(object sender, EventArgs e)
+
+        private void SecondAction(object sender, EventArgs e)
         {
             groupQuestion.Enabled = true;
             ShowQuestion();
-            this.btnNext.Click -= new EventHandler(secondAction);
-            this.btnNext.Click += new EventHandler(firstAction);
+            this.btnNext.Click -= new EventHandler(SecondAction);
+            this.btnNext.Click += new EventHandler(FirstAction);
         }
 
-        private void picture()
+        private void Picture()
         {
             if (question.GetArrayPicture() != "-")
             {
@@ -278,19 +283,12 @@ namespace Test
             pictureBox.Visible = false;
         }
 
-        private int quick = 600;
-
         private void Timer()
         {
             timer1.Enabled = true;
             timer1 = new System.Windows.Forms.Timer();
             timer1.Interval = 1;
             timer1.Tick += new EventHandler(timer1_Tick);
-        }
-
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -317,12 +315,12 @@ namespace Test
 
         }
 
-        private void btnNext_KeyPress(object sender, KeyPressEventArgs e)
+        private void Point1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void Point1_Click(object sender, EventArgs e)
+        private void btnNext_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }

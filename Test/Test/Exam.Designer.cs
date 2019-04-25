@@ -73,8 +73,7 @@
             // 
             // listQuestion
             // 
-            this.listQuestion.Enabled = false;
-            this.listQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listQuestion.ForeColor = System.Drawing.SystemColors.WindowText;
             this.listQuestion.FormattingEnabled = true;
             this.listQuestion.Location = new System.Drawing.Point(210, 67);
@@ -150,7 +149,6 @@
             this.btnNext.TabIndex = 15;
             this.btnNext.Text = "Следующий вопрос";
             this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             this.btnNext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnNext_KeyPress);
             // 
             // labelTimerMin

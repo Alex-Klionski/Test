@@ -58,11 +58,15 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.checkBoxRight = new System.Windows.Forms.CheckBox();
             this.checkBoxNotRight = new System.Windows.Forms.CheckBox();
+            this.usersDataSet = new Test.usersDataSet();
+            this.usersDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_update
@@ -306,6 +310,17 @@
             this.checkBoxNotRight.Text = "Отключить звук на неправильный вариант ответа";
             this.checkBoxNotRight.UseVisualStyleBackColor = true;
             // 
+            // usersDataSet
+            // 
+            this.usersDataSet.CaseSensitive = true;
+            this.usersDataSet.DataSetName = "usersDataSet";
+            this.usersDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usersDataSetBindingSource
+            // 
+            this.usersDataSetBindingSource.DataSource = this.usersDataSet;
+            this.usersDataSetBindingSource.Position = 0;
+            // 
             // FSettingsAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -328,6 +343,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,5 +379,7 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.CheckBox checkBoxRight;
         private System.Windows.Forms.CheckBox checkBoxNotRight;
+        private System.Windows.Forms.BindingSource usersDataSetBindingSource;
+        private usersDataSet usersDataSet;
     }
 }

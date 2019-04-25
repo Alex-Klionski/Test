@@ -35,6 +35,7 @@ namespace TestApp.DAL
         public AuthorizationBase(out string[] rightLogin,out string[] rightPassword)
         {
             Count = Amount();
+
             myConnection = new OleDbConnection(connectString);
             myConnection.Open();
             string query = "SELECT * FROM [user] ORDER BY userID";
