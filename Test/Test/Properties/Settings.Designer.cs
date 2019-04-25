@@ -43,5 +43,15 @@ namespace Test.Properties {
                 return ((string)(this["databaseConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\users.mdb")]
+        public string usersConnectionString {
+            get {
+                return ((string)(this["usersConnectionString"]));
+            }
+        }
     }
 }

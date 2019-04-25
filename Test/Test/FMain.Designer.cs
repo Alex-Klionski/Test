@@ -35,7 +35,7 @@
             this.Settings = new System.Windows.Forms.Button();
             this.Exit = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.администраторToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.UserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupPDD = new System.Windows.Forms.GroupBox();
             this.Back = new System.Windows.Forms.Button();
@@ -106,7 +106,7 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.администраторToolStripMenuItem,
+            this.UserToolStripMenuItem,
             this.помощьToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -114,12 +114,12 @@
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // администраторToolStripMenuItem
+            // UserToolStripMenuItem
             // 
-            this.администраторToolStripMenuItem.Name = "администраторToolStripMenuItem";
-            this.администраторToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
-            this.администраторToolStripMenuItem.Text = "Администратор";
-            this.администраторToolStripMenuItem.Click += new System.EventHandler(this.администраторToolStripMenuItem_Click);
+            this.UserToolStripMenuItem.Name = "UserToolStripMenuItem";
+            this.UserToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
+            this.UserToolStripMenuItem.Text = "User";
+            this.UserToolStripMenuItem.Click += new System.EventHandler(this.UserToolStripMenuItem_Click);
             // 
             // помощьToolStripMenuItem
             // 
@@ -225,7 +225,7 @@
         private System.Windows.Forms.Button Settings;
         private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem администраторToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem UserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem помощьToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupPDD;
         private System.Windows.Forms.Button Back;

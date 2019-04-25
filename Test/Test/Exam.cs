@@ -16,7 +16,7 @@ namespace Test
     {
         FMain main = new FMain();
         Question question = new Question();
-
+        
         static Random rand = new Random();
 
         public Exam()

@@ -17,8 +17,21 @@ namespace Test
         public FSettingsAdmin()
         {
             InitializeComponent();
+            CheckOnAdmin();
         }
-
+        private void CheckOnAdmin()
+        {
+            if(Login.login.Name == "admin")
+            {
+                dataGridView1.Visible = true;
+                bindingNavigator1.Visible = true;
+            }
+            else
+            {
+                checkBoxRight.Location = new Point(120, 78);
+                checkBoxNotRight.Location = new Point(120, 110);
+            }
+        }
         private void FSettings_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.Questions". При необходимости она может быть перемещена или удалена.

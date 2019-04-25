@@ -34,3 +34,5 @@ E:\!\Test\Test\obj\Debug\TestApp.UI.csproj.CoreCompileInputs.cache
 E:\!\Test\Test\obj\Debug\TestApp.UI.csproj.CopyComplete
 E:\!\Test\Test\obj\Debug\Test.exe
 E:\!\Test\Test\obj\Debug\Test.pdb
+E:\!Study\2sem\!\Test\Test\obj\Debug\Test.Registration.resources
+E:\!Study\2sem\!\Test\Test\obj\Debug\Test.Login.resources

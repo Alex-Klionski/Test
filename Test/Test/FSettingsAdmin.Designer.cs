@@ -105,6 +105,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(849, 150);
             this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.Visible = false;
             // 
             // qidDataGridViewTextBoxColumn
             // 
@@ -196,6 +197,7 @@
             this.bindingNavigator1.Size = new System.Drawing.Size(1098, 25);
             this.bindingNavigator1.TabIndex = 6;
             this.bindingNavigator1.Text = "bindingNavigator1";
+            this.bindingNavigator1.Visible = false;
             // 
             // bindingNavigatorAddNewItem
             // 

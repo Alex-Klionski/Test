@@ -19,7 +19,7 @@ namespace TestApp.DAL
 
         public static string connectString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source= database.mdb";
         private OleDbConnection myConnection;
-        public int Amount()
+        private int Amount()
         {
             int count = 0;
             myConnection = new OleDbConnection(connectString);

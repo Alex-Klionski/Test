@@ -12,13 +12,12 @@ namespace Test
 {
     public partial class FMain : Form
     {
-
         FSettingsAdmin setting = new FSettingsAdmin();
         
         public FMain()
         {
             InitializeComponent();
-
+            UserToolStripMenuItem.Text = Login.login.Name;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -33,11 +32,6 @@ namespace Test
         }
 
 
-
-        private void администраторToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void Exit_Click(object sender, EventArgs e)
         {
@@ -87,6 +81,11 @@ namespace Test
         private void FMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void UserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
