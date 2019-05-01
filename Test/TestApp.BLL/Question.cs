@@ -10,12 +10,12 @@ namespace TestApp.BLL
 {
     public class Question : QuestionsBase
     {
-        public Question() : base(out ArrayQuestions, out ArrayRight, out ArrayReccommend, out ArrayVar1, out ArrayVar2, out ArrayVar3, out ArrayPicture)
+        QuestionsBase questionBase = new QuestionsBase(out ArrayQuestions, out ArrayRight, out ArrayReccommend, out ArrayVar1, out ArrayVar2, out ArrayVar3, out ArrayPicture);
+
+        public Question() : base(out ArrayQuestions, out ArrayRight, out ArrayReccommend, out ArrayVar1, out ArrayVar2, out ArrayVar3, out  ArrayPicture)
         {
 
         }
-        private new static string[] ArrayQuestions, ArrayRight, ArrayReccommend, ArrayVar1, ArrayVar2, ArrayVar3, ArrayPicture;
-        QuestionsBase questionBase = new QuestionsBase(out ArrayQuestions, out ArrayRight, out ArrayReccommend, out ArrayVar1, out ArrayVar2, out ArrayVar3, out ArrayPicture);
 
         private static int amountQuestion, correctAnswer, NotCorrentAnswer;
         int i = 0;
@@ -24,6 +24,7 @@ namespace TestApp.BLL
         SoundPlayer soundNotCorrect = new SoundPlayer("E:\\!Study\\2sem\\!\\Sounds\\notcorrect.wav");
         SoundPlayer soundCorrect = new SoundPlayer("E:\\!Study\\2sem\\!\\Sounds\\correct.wav");
         static Random rand = new Random();
+
 
         public void InitExam()
         {

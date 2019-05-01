@@ -149,6 +149,7 @@
             this.btnNext.TabIndex = 15;
             this.btnNext.Text = "Следующий вопрос";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             this.btnNext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnNext_KeyPress);
             // 
             // labelTimerMin

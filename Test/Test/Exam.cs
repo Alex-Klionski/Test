@@ -15,7 +15,7 @@ namespace Test
     public partial class Exam : Form
     {
         FMain main = new FMain();
-        Question question = new Question();
+        public static Question questionExam = new Question();
         
         static Random rand = new Random();
 
@@ -36,7 +36,7 @@ namespace Test
             groupQuestion.Visible = true;
             Timer();
             btnNext.Text = "Следующий вопрос";
-            question.InitExam();
+            questionExam.InitExam();
             RadioChecked();
             radio_turn_on_off();
             labelResult.Text = "";
@@ -85,7 +85,7 @@ namespace Test
 
         private void radio_turn_on_off()
         {
-            if (question.GetAmountQuestion() < 0)
+            if (questionExam.GetAmountQuestion() < 0)
             {
                 radioAnswer1.Visible = false;
                 radioAnswer2.Visible = false;
@@ -107,7 +107,7 @@ namespace Test
             listQuestion.Items.Clear();
             RadioChecked();
             PictureCheck();
-            listQuestion.Items.Add(question.GetArrayQuestion());
+            listQuestion.Items.Add(questionExam.GetArrayQuestion());
             Picture();
             RadioTags(rand.Next(1, 6));
         }
@@ -117,12 +117,12 @@ namespace Test
         {
             switch (p)
             {
-                case 1: radioAnswer1.Text = question.GetArrayVar3(); radioAnswer2.Text = question.GetArrayRight(); radioAnswer3.Text = question.GetArrayVar2(); radioAnswer4.Text = question.GetArrayVar1(); break;
-                case 2: radioAnswer1.Text = question.GetArrayRight(); radioAnswer2.Text = question.GetArrayVar1(); radioAnswer3.Text = question.GetArrayVar3(); radioAnswer4.Text = question.GetArrayVar2(); break;
-                case 3: radioAnswer1.Text = question.GetArrayVar1(); radioAnswer2.Text = question.GetArrayVar3(); radioAnswer3.Text = question.GetArrayRight(); radioAnswer4.Text = question.GetArrayVar2(); break;
-                case 4: radioAnswer1.Text = question.GetArrayVar2(); radioAnswer2.Text = question.GetArrayVar3(); radioAnswer3.Text = question.GetArrayVar1(); radioAnswer4.Text = question.GetArrayRight(); break;
-                case 5: radioAnswer1.Text = question.GetArrayVar3(); radioAnswer2.Text = question.GetArrayVar2(); radioAnswer3.Text = question.GetArrayRight(); radioAnswer4.Text = question.GetArrayVar1(); break;
-                case 6: radioAnswer1.Text = question.GetArrayVar3(); radioAnswer2.Text = question.GetArrayVar1(); radioAnswer3.Text = question.GetArrayVar2(); radioAnswer4.Text = question.GetArrayRight(); break;
+                case 1: radioAnswer1.Text = questionExam.GetArrayVar3(); radioAnswer2.Text = questionExam.GetArrayRight(); radioAnswer3.Text = questionExam.GetArrayVar2(); radioAnswer4.Text = questionExam.GetArrayVar1(); break;
+                case 2: radioAnswer1.Text = questionExam.GetArrayRight(); radioAnswer2.Text = questionExam.GetArrayVar1(); radioAnswer3.Text = questionExam.GetArrayVar3(); radioAnswer4.Text = questionExam.GetArrayVar2(); break;
+                case 3: radioAnswer1.Text = questionExam.GetArrayVar1(); radioAnswer2.Text = questionExam.GetArrayVar3(); radioAnswer3.Text = questionExam.GetArrayRight(); radioAnswer4.Text = questionExam.GetArrayVar2(); break;
+                case 4: radioAnswer1.Text = questionExam.GetArrayVar2(); radioAnswer2.Text = questionExam.GetArrayVar3(); radioAnswer3.Text = questionExam.GetArrayVar1(); radioAnswer4.Text = questionExam.GetArrayRight(); break;
+                case 5: radioAnswer1.Text = questionExam.GetArrayVar3(); radioAnswer2.Text = questionExam.GetArrayVar2(); radioAnswer3.Text = questionExam.GetArrayRight(); radioAnswer4.Text = questionExam.GetArrayVar1(); break;
+                case 6: radioAnswer1.Text = questionExam.GetArrayVar3(); radioAnswer2.Text = questionExam.GetArrayVar1(); radioAnswer3.Text = questionExam.GetArrayVar2(); radioAnswer4.Text = questionExam.GetArrayRight(); break;
             }
         }
 
@@ -145,41 +145,41 @@ namespace Test
 
         private void FirstAction(object sender, EventArgs e)
         {
-            if (question.GetAmountQuestion() < 0) { InitTest(); return; }
+            if (questionExam.GetAmountQuestion() < 0) { InitTest(); return; }
             if (!(radioAnswer1.Checked || radioAnswer2.Checked || radioAnswer3.Checked || radioAnswer4.Checked))
             {
                 MessageBox.Show("Выберите вариант ответа");
                 return;
             }
 
-            if ((radioAnswer1.Checked && radioAnswer1.Text == question.GetArrayRight()) ||
-                 (radioAnswer2.Checked && radioAnswer2.Text == question.GetArrayRight()) ||
-                 (radioAnswer3.Checked && radioAnswer3.Text == question.GetArrayRight()) ||
-                 (radioAnswer4.Checked && radioAnswer4.Text == question.GetArrayRight()))
+            if ((radioAnswer1.Checked && radioAnswer1.Text == questionExam.GetArrayRight()) ||
+                 (radioAnswer2.Checked && radioAnswer2.Text == questionExam.GetArrayRight()) ||
+                 (radioAnswer3.Checked && radioAnswer3.Text == questionExam.GetArrayRight()) ||
+                 (radioAnswer4.Checked && radioAnswer4.Text == questionExam.GetArrayRight()))
             {
-                FChooseTest.question.SoundPlayCorrect();
+                questionExam.SoundPlayCorrect();
                 panelCorrect.Visible = true;
                 labelCorrect.Visible = true;
-                question.RightAnswer();
+                questionExam.RightAnswer();
                 PanelPoint();
 
             }
             else
             {
-                FChooseTest.question.SoundPlayNotCorrect();
+                questionExam.SoundPlayNotCorrect();
                 panelError.Visible = true;
                 labelError.Visible = true;
-                MessageBox.Show("Правильный вариант ответа: " + question.GetArrayRight());
-                question.NotAnswer();
+                MessageBox.Show("Правильный вариант ответа: " + questionExam.GetArrayRight());
+                questionExam.RightAnswer();
                 PanelPoint();
             }
 
-            if(question.GetNotAnswer() == 2 || labelTimerMin.Visible == false)
+            if(questionExam.GetNotAnswer() == 2 || labelTimerMin.Visible == false)
             {
                 GetFail();
                 return;
             }
-            if (question.GetAmountQuestion() < 0)
+            if (questionExam.GetAmountQuestion() < 0)
             {
                 GetPass();
                 return;
@@ -192,34 +192,34 @@ namespace Test
         }
         private void PanelPoint()
         {
-            if (question.I() == 1 && panelCorrect.Visible == true) { Point1.BackColor = Color.Lime; }
-            if (question.I() == 2 && panelCorrect.Visible == true) { Point2.BackColor = Color.Lime; }
-            if (question.I() == 3 && panelCorrect.Visible == true) { Point3.BackColor = Color.Lime; }
-            if (question.I() == 4 && panelCorrect.Visible == true) { Point4.BackColor = Color.Lime; }
-            if (question.I() == 5 && panelCorrect.Visible == true) { Point5.BackColor = Color.Lime; }
-            if (question.I() == 6 && panelCorrect.Visible == true) { Point6.BackColor = Color.Lime; }
-            if (question.I() == 7 && panelCorrect.Visible == true) { Point7.BackColor = Color.Lime; }
-            if (question.I() == 8 && panelCorrect.Visible == true) { Point8.BackColor = Color.Lime; }
-            if (question.I() == 9 && panelCorrect.Visible == true) { Point9.BackColor = Color.Lime; }
-            if (question.I() == 10 && panelCorrect.Visible == true) { Point10.BackColor = Color.Lime; }
+            if (questionExam.I() == 1 && panelCorrect.Visible == true) { Point1.BackColor = Color.Lime; }
+            if (questionExam.I() == 2 && panelCorrect.Visible == true) { Point2.BackColor = Color.Lime; }
+            if (questionExam.I() == 3 && panelCorrect.Visible == true) { Point3.BackColor = Color.Lime; }
+            if (questionExam.I() == 4 && panelCorrect.Visible == true) { Point4.BackColor = Color.Lime; }
+            if (questionExam.I() == 5 && panelCorrect.Visible == true) { Point5.BackColor = Color.Lime; }
+            if (questionExam.I() == 6 && panelCorrect.Visible == true) { Point6.BackColor = Color.Lime; }
+            if (questionExam.I() == 7 && panelCorrect.Visible == true) { Point7.BackColor = Color.Lime; }
+            if (questionExam.I() == 8 && panelCorrect.Visible == true) { Point8.BackColor = Color.Lime; }
+            if (questionExam.I() == 9 && panelCorrect.Visible == true) { Point9.BackColor = Color.Lime; }
+            if (questionExam.I() == 10 && panelCorrect.Visible == true) { Point10.BackColor = Color.Lime; }
 
-            if (question.I() == 1 && panelError.Visible == true) { Point1.BackColor = Color.Red; }
-            if (question.I() == 2 && panelError.Visible == true) { Point2.BackColor = Color.Red; }
-            if (question.I() == 3 && panelError.Visible == true) { Point3.BackColor = Color.Red; }
-            if (question.I() == 4 && panelError.Visible == true) { Point4.BackColor = Color.Red; }
-            if (question.I() == 5 && panelError.Visible == true) { Point5.BackColor = Color.Red; }
-            if (question.I() == 6 && panelError.Visible == true) { Point6.BackColor = Color.Red; }
-            if (question.I() == 7 && panelError.Visible == true) { Point7.BackColor = Color.Red; }
-            if (question.I() == 8 && panelError.Visible == true) { Point8.BackColor = Color.Red; }
-            if (question.I() == 9 && panelError.Visible == true) { Point9.BackColor = Color.Red; }
-            if (question.I() == 10 && panelError.Visible == true) { Point10.BackColor = Color.Red; }
+            if (questionExam.I() == 1 && panelError.Visible == true) { Point1.BackColor = Color.Red; }
+            if (questionExam.I() == 2 && panelError.Visible == true) { Point2.BackColor = Color.Red; }
+            if (questionExam.I() == 3 && panelError.Visible == true) { Point3.BackColor = Color.Red; }
+            if (questionExam.I() == 4 && panelError.Visible == true) { Point4.BackColor = Color.Red; }
+            if (questionExam.I() == 5 && panelError.Visible == true) { Point5.BackColor = Color.Red; }
+            if (questionExam.I() == 6 && panelError.Visible == true) { Point6.BackColor = Color.Red; }
+            if (questionExam.I() == 7 && panelError.Visible == true) { Point7.BackColor = Color.Red; }
+            if (questionExam.I() == 8 && panelError.Visible == true) { Point8.BackColor = Color.Red; }
+            if (questionExam.I() == 9 && panelError.Visible == true) { Point9.BackColor = Color.Red; }
+            if (questionExam.I() == 10 && panelError.Visible == true) { Point10.BackColor = Color.Red; }
         }
 
         private void GetPass()
         {
             SoundPlayer passExam = new SoundPlayer("E:\\!Study\\2sem\\!\\Sounds\\passExam.wav");
-            labelResult.Text = "Правильных ответов: " + question.GetRightAnswer().ToString() + "\n" +
-            "Неправильных ответов: " + question.GetNotAnswer().ToString();
+            labelResult.Text = "Правильных ответов: " + questionExam.GetRightAnswer().ToString() + "\n" +
+            "Неправильных ответов: " + questionExam.GetNotAnswer().ToString();
             listQuestion.Visible = false;
             passExam.Play();
             labelTimerMin.Visible = false;
@@ -231,7 +231,7 @@ namespace Test
             groupBoxPass.Visible = true;
             groupBoxNotPass.Visible = false;
             PictureCheck();
-            question.GetNull();
+            questionExam.GetNull();
             return;
         }
 
@@ -248,7 +248,7 @@ namespace Test
             groupBoxPass.Visible = false;
             this.btnNext.Click -= new EventHandler(FirstAction);
             this.btnNext.Click += new EventHandler(ActionClose);
-            question.GetNull();
+            questionExam.GetNull();
             PictureCheck();
             return;
         }
@@ -263,10 +263,10 @@ namespace Test
 
         private void Picture()
         {
-            if (question.GetArrayPicture() != "-")
+            if (questionExam.GetArrayPicture() != "-")
             {
                 pictureBox.Visible = true;
-                pictureBox.Image = new Bitmap(question.GetArrayPicture());
+                pictureBox.Image = new Bitmap(questionExam.GetArrayPicture());
                 groupQuestion.Location = new System.Drawing.Point(489, 197);
                 groupQuestion.Size = new System.Drawing.Size(623, 258);
                 listQuestion.Location = new System.Drawing.Point(489, 67);
@@ -321,6 +321,11 @@ namespace Test
         }
 
         private void btnNext_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
         {
 
         }

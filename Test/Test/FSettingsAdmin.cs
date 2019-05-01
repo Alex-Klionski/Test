@@ -46,11 +46,13 @@ namespace Test
             if(checkBoxRight.Checked == true)
             {
                 FChooseTest.question.SoundStopCorrect();
+                Exam.questionExam.SoundStopCorrect();
             }
 
             if(checkBoxNotRight.Checked == true)
             {
-               FChooseTest.question.SoundStopNotCorrect();
+                FChooseTest.question.SoundStopNotCorrect();
+                Exam.questionExam.SoundStopNotCorrect();
             }
 
         }

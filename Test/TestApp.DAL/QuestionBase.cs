@@ -36,7 +36,7 @@ namespace TestApp.DAL
             return count;
         }
 
-        public QuestionsBase(out string[] ArrayQuestions, out string[] ArrayRight, out string[] ArrayReccommend, out string[] ArrayVar1, out string[] ArrayVar2, out string[] ArrayVar3, out string[] ArrayPicture)
+        public QuestionsBase(out string[] ArrayQuestions, out string[] ArrayRight, out string[] ArrayReccommend, out string[] ArrayVar1, out string[] ArrayVar2, out  string[] ArrayVar3, out string[] ArrayPicture)
         {
             Count = Amount();
 

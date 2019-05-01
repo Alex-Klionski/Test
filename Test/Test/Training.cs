@@ -16,7 +16,7 @@ namespace Test
    
     public partial class FChooseTest : Form
     {
-        static public Question question = new Question();
+        public static Question question = new Question();
         FMain main = new FMain();
         int m = 0, s = 0; // Таймер
 
