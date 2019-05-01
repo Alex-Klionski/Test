@@ -41,7 +41,7 @@
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT userID, username, [password], name, surname, email FROM [user]</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -128,10 +128,6 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="right" msprop:Generator_ColumnVarNameInTable="columnright" msprop:Generator_ColumnPropNameInRow="right" msprop:Generator_ColumnPropNameInTable="rightColumn" msprop:Generator_UserColumnName="right" type="xs:string" minOccurs="0" />
-              <xs:element name="notright" msprop:Generator_ColumnVarNameInTable="columnnotright" msprop:Generator_ColumnPropNameInRow="notright" msprop:Generator_ColumnPropNameInTable="notrightColumn" msprop:Generator_UserColumnName="notright" type="xs:string" minOccurs="0" />
-              <xs:element name="pass" msprop:Generator_ColumnVarNameInTable="columnpass" msprop:Generator_ColumnPropNameInRow="pass" msprop:Generator_ColumnPropNameInTable="passColumn" msprop:Generator_UserColumnName="pass" type="xs:string" minOccurs="0" />
-              <xs:element name="notpass" msprop:Generator_ColumnVarNameInTable="columnnotpass" msprop:Generator_ColumnPropNameInRow="notpass" msprop:Generator_ColumnPropNameInTable="notpassColumn" msprop:Generator_UserColumnName="notpass" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

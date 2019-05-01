@@ -13,7 +13,6 @@ namespace Test
 {
     public partial class FSettingsAdmin : Form
     {
-
         public FSettingsAdmin()
         {
             InitializeComponent();

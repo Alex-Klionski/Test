@@ -16,7 +16,7 @@ namespace Test
     {
         FMain main = new FMain();
         public static Question questionExam = new Question();
-        
+        ExamSolution solution = new ExamSolution();
         static Random rand = new Random();
 
         private int quick = 600;
@@ -170,7 +170,7 @@ namespace Test
                 panelError.Visible = true;
                 labelError.Visible = true;
                 MessageBox.Show("Правильный вариант ответа: " + questionExam.GetArrayRight());
-                questionExam.RightAnswer();
+                questionExam.NotAnswer();
                 PanelPoint();
             }
 
@@ -217,6 +217,7 @@ namespace Test
 
         private void GetPass()
         {
+            solution.SolutionPass();
             SoundPlayer passExam = new SoundPlayer("E:\\!Study\\2sem\\!\\Sounds\\passExam.wav");
             labelResult.Text = "Правильных ответов: " + questionExam.GetRightAnswer().ToString() + "\n" +
             "Неправильных ответов: " + questionExam.GetNotAnswer().ToString();
@@ -237,6 +238,7 @@ namespace Test
 
         private void GetFail()
         {
+            solution.SolutionNotPass();
             SoundPlayer failExam = new SoundPlayer("E:\\!Study\\2sem\\!\\Sounds\\failExam.wav");
             failExam.Play();
             listQuestion.Visible = false;

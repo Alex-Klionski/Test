@@ -13,7 +13,7 @@ namespace Test
 {
     public partial class Login : Form
     {
-        static public Authorization login = new Authorization();
+        public static Authorization login = new Authorization();
         public Login()
         {
             InitializeComponent();

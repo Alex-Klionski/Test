@@ -29,7 +29,7 @@ namespace TestApp.BLL
         public void InitExam()
         {
             questionBase.QuestionRand(out ArrayQuestions, out ArrayRight, out ArrayReccommend, out ArrayVar1, out ArrayVar2, out ArrayVar3, out ArrayPicture);
-            amountQuestion = 10;
+            amountQuestion = questionBase.Count;
             correctAnswer = 0;
             NotCorrentAnswer = 0;
             amountQuestion--;

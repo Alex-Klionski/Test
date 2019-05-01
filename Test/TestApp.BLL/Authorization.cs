@@ -10,17 +10,20 @@ namespace TestApp.BLL
     public class Authorization : AuthorizationBase
     {
         public string Name { get; set; }
-        AuthorizationBase authorizationbase = new AuthorizationBase(out rightLogin, out rightPassword);
+            
         public Authorization() : base(out rightLogin, out rightPassword)
         {
 
         }
         public bool Login(string Login, string Password)
         {
-            for(int i = 0; i < authorizationbase.Count; i++)
+            AuthorizationBase authorizationbase = new AuthorizationBase(out rightLogin, out rightPassword);
+            for (int i = 0; i < authorizationbase.Count; i++)
             {
                 if (Login.ToString() == rightLogin[i] && Password.ToString() == rightPassword[i])
                 {
+                    Id = rightID[i];
+                    ExamSolution.Answer = answer[i];
                     return true;
                 }
                 else

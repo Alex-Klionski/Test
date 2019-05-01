@@ -10,7 +10,8 @@ namespace TestApp.DAL
 {
     public class AuthorizationBase
     {
-        public static string[] rightLogin, rightPassword;
+        public static string Id { get; set; }
+        public static string[] rightLogin, rightPassword, rightID, answer;
         public static string connectString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source = users.mdb";
         private OleDbConnection myConnection;
 
@@ -44,12 +45,15 @@ namespace TestApp.DAL
 
             rightLogin = new string[Count];
             rightPassword = new string[Count];
-
+            rightID = new string[Count];
+            answer = new string[Count];
             int i = 0;
             while (reader.Read())
             {
+                rightID[i] = reader[0].ToString();
                 rightLogin[i] = reader[1].ToString();
                 rightPassword[i] = reader[2].ToString();
+                answer[i] = reader[6].ToString();
                 i++;
             }
             reader.Close();

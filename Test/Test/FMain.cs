@@ -7,17 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using TestApp.BLL;
 namespace Test
 {
     public partial class FMain : Form
     {
         FSettingsAdmin setting = new FSettingsAdmin();
-        
+
         public FMain()
         {
             InitializeComponent();
             UserToolStripMenuItem.Text = Login.login.Name;
+            toolStripTextBox.Text = ExamSolution.Answer;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -84,6 +85,11 @@ namespace Test
         }
 
         private void UserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripTextBox_Click(object sender, EventArgs e)
         {
 
         }

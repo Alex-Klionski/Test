@@ -42,6 +42,8 @@
             this.groupTest = new System.Windows.Forms.GroupBox();
             this.Exam = new System.Windows.Forms.Button();
             this.Training = new System.Windows.Forms.Button();
+            this.последнийРезультатToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.menuStrip1.SuspendLayout();
             this.groupPDD.SuspendLayout();
             this.groupTest.SuspendLayout();
@@ -107,6 +109,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.UserToolStripMenuItem,
+            this.последнийРезультатToolStripMenuItem,
             this.помощьToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -189,6 +192,20 @@
             this.Training.UseVisualStyleBackColor = true;
             this.Training.Click += new System.EventHandler(this.Training_Click);
             // 
+            // последнийРезультатToolStripMenuItem
+            // 
+            this.последнийРезультатToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox});
+            this.последнийРезультатToolStripMenuItem.Name = "последнийРезультатToolStripMenuItem";
+            this.последнийРезультатToolStripMenuItem.Size = new System.Drawing.Size(137, 20);
+            this.последнийРезультатToolStripMenuItem.Text = "Последний Результат";
+            // 
+            // toolStripTextBox
+            // 
+            this.toolStripTextBox.Name = "toolStripTextBox";
+            this.toolStripTextBox.Size = new System.Drawing.Size(100, 23);
+            this.toolStripTextBox.Click += new System.EventHandler(this.toolStripTextBox_Click);
+            // 
             // FMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,6 +249,8 @@
         private System.Windows.Forms.GroupBox groupTest;
         private System.Windows.Forms.Button Exam;
         private System.Windows.Forms.Button Training;
+        private System.Windows.Forms.ToolStripMenuItem последнийРезультатToolStripMenuItem;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox;
     }
 }
 
