@@ -22,14 +22,17 @@ namespace TestApp.DAL
             int count = 0;
             myConnection = new OleDbConnection(connectString);
             myConnection.Open();
+
             string query = "SELECT * FROM [user] ORDER BY userID";
             OleDbCommand command = new OleDbCommand(query, myConnection);
             OleDbDataReader reader = command.ExecuteReader();
+
             while (reader.Read())
             {
                 count++;
             }
             myConnection.Close();
+
             return count;
         }
 
@@ -39,6 +42,7 @@ namespace TestApp.DAL
 
             myConnection = new OleDbConnection(connectString);
             myConnection.Open();
+
             string query = "SELECT * FROM [user] ORDER BY userID";
             OleDbCommand command = new OleDbCommand(query, myConnection);
             OleDbDataReader reader = command.ExecuteReader();
@@ -47,15 +51,18 @@ namespace TestApp.DAL
             rightPassword = new string[Count];
             rightID = new string[Count];
             answer = new string[Count];
-            int i = 0;
+
+            int temp = 0;
             while (reader.Read())
             {
-                rightID[i] = reader[0].ToString();
-                rightLogin[i] = reader[1].ToString();
-                rightPassword[i] = reader[2].ToString();
-                answer[i] = reader[6].ToString();
-                i++;
+                rightID[temp] = reader[0].ToString();
+                rightLogin[temp] = reader[1].ToString();
+                rightPassword[temp] = reader[2].ToString();
+                answer[temp] = reader[6].ToString();
+                temp++;
             }
+            myConnection.Close();
+
             reader.Close();
         }
     }

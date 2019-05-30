@@ -201,7 +201,6 @@ namespace Test
                 panelCorrect.Visible = true;
                 labelCorrect.Visible = true;
                 question.RightAnswer();
-
             }
             else
             {
@@ -212,10 +211,8 @@ namespace Test
                 question.NotAnswer();
             }
 
-
             if (question.GetAmountQuestion() < 0)
             {
-
                 labelResult.Text = "Правильных ответов: " + question.GetRightAnswer().ToString() + "\n" +
                 "Неправильных ответов: " + question.GetNotAnswer().ToString();
                 listQuestion.Items.Add("Результат теста");

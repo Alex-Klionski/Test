@@ -14,6 +14,7 @@ namespace Test
     public partial class Login : Form
     {
         public static Authorization login = new Authorization();
+
         public Login()
         {
             InitializeComponent();
@@ -38,14 +39,15 @@ namespace Test
                 login.Name = textBoxLogin.Text;
                 Hide();
                 FMain main = new FMain();
-                main.ShowDialog();
-                
+                main.ShowDialog();           
             }
             else
+            {
                 MessageBox.Show("Ошибка ввода!");
+            }
+
             textBoxLogin.Text = "";
             textBoxPassword.Text = "";
-
         }
     }
 }

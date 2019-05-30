@@ -15,6 +15,7 @@ namespace Test
     public partial class Exam : Form
     {
         FMain main = new FMain();
+
         public static Question questionExam = new Question();
         ExamSolution solution = new ExamSolution();
         static Random rand = new Random();
@@ -112,7 +113,6 @@ namespace Test
             RadioTags(rand.Next(1, 6));
         }
 
-
         private void RadioTags(int p)
         {
             switch (p)
@@ -162,14 +162,13 @@ namespace Test
                 labelCorrect.Visible = true;
                 questionExam.RightAnswer();
                 PanelPoint();
-
             }
             else
             {
                 questionExam.SoundPlayNotCorrect();
                 panelError.Visible = true;
                 labelError.Visible = true;
-                MessageBox.Show("Правильный вариант ответа: " + questionExam.GetArrayRight());
+                // MessageBox.Show("Правильный вариант ответа: " + questionExam.GetArrayRight());
                 questionExam.NotAnswer();
                 PanelPoint();
             }
@@ -224,7 +223,7 @@ namespace Test
             listQuestion.Visible = false;
             passExam.Play();
             labelTimerMin.Visible = false;
-            btnNext.Text = "Отдыхай";
+            btnNext.Text = "Отдыхать";
             GroupBoxCorrectFalse();
             this.btnNext.Click -= new EventHandler(FirstAction);
             this.btnNext.Click += new EventHandler(ActionClose);
@@ -243,7 +242,7 @@ namespace Test
             failExam.Play();
             listQuestion.Visible = false;
             labelTimerMin.Visible = false;
-            btnNext.Text = "Иди учи!";
+            btnNext.Text = "Идти учить!";
             GroupBoxErrorFalse();
             groupQuestion.Visible = false;
             groupBoxNotPass.Visible = true;

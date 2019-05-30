@@ -13,14 +13,11 @@ namespace TestApp.DAL
 
         public void SolutionNotRight()
         {
-
             connection.Open();
-
             OleDbCommand command = new OleDbCommand();
             command.Connection = connection;
             string query = "update [user] set solve='notpass' where userID="+AuthorizationBase.Id+"";
             command.CommandText = query;
-
             command.ExecuteNonQuery();
             connection.Close();
         }
@@ -28,12 +25,10 @@ namespace TestApp.DAL
         public void SolutionRight()
         {
             connection.Open();
-
             OleDbCommand command = new OleDbCommand();
             command.Connection = connection;
             string query = "update [user] set solve='pass' where userID=" + AuthorizationBase.Id + "";
             command.CommandText = query;
-
             command.ExecuteNonQuery();
             connection.Close();
         }

@@ -10,28 +10,29 @@ namespace TestApp.BLL
 {
     public class Question : QuestionsBase
     {
-        QuestionsBase questionBase = new QuestionsBase(out ArrayQuestions, out ArrayRight, out ArrayReccommend, out ArrayVar1, out ArrayVar2, out ArrayVar3, out ArrayPicture);
+        QuestionsBase questionBase = new QuestionsBase(out arrayQuestions, out arrayRight, out arrayReccommend, out arrayVar1, out arrayVar2, out arrayVar3, out arrayPicture);
 
-        public Question() : base(out ArrayQuestions, out ArrayRight, out ArrayReccommend, out ArrayVar1, out ArrayVar2, out ArrayVar3, out  ArrayPicture)
+        public Question() : base(out arrayQuestions, out arrayRight, out arrayReccommend, out arrayVar1, out arrayVar2, out arrayVar3, out  arrayPicture)
         {
 
         }
 
-        private static int amountQuestion, correctAnswer, NotCorrentAnswer;
+        private static int amountQuestion, correctAnswer, notCorrentAnswer;
         int i = 0;
         int count = 1;
+
         bool playMusicCorrect = true, playMusicNotCorrect = true;
         SoundPlayer soundNotCorrect = new SoundPlayer("E:\\!Study\\2sem\\!\\Sounds\\notcorrect.wav");
         SoundPlayer soundCorrect = new SoundPlayer("E:\\!Study\\2sem\\!\\Sounds\\correct.wav");
-        static Random rand = new Random();
 
+        static Random rand = new Random();
 
         public void InitExam()
         {
-            questionBase.QuestionRand(out ArrayQuestions, out ArrayRight, out ArrayReccommend, out ArrayVar1, out ArrayVar2, out ArrayVar3, out ArrayPicture);
+            questionBase.QuestionRand(out arrayQuestions, out arrayRight, out arrayReccommend, out arrayVar1, out arrayVar2, out arrayVar3, out arrayPicture);
             amountQuestion = questionBase.Count;
             correctAnswer = 0;
-            NotCorrentAnswer = 0;
+            notCorrentAnswer = 0;
             amountQuestion--;
         }
 
@@ -39,7 +40,7 @@ namespace TestApp.BLL
         {
             amountQuestion = questionBase.Count;
             correctAnswer = 0;
-            NotCorrentAnswer = 0;
+            notCorrentAnswer = 0;
             amountQuestion--;
         }
 
@@ -49,9 +50,10 @@ namespace TestApp.BLL
             amountQuestion--;
             i++;
         }
+
         public void NotAnswer()
         {
-            NotCorrentAnswer++;
+            notCorrentAnswer++;
             amountQuestion--;
             i++;
         }
@@ -81,15 +83,15 @@ namespace TestApp.BLL
         }
 
         public int GetRightAnswer() { return correctAnswer; }
-        public int GetNotAnswer() { return NotCorrentAnswer; }
+        public int GetNotAnswer() { return notCorrentAnswer; }
         public int GetAmountQuestion() { return amountQuestion; }
-        public string GetArrayQuestion() { return ArrayQuestions[i]; }
-        public string GetArrayRight() { return ArrayRight[i]; }
-        public string GetArrayReccomend() { return ArrayReccommend[i]; }
-        public string GetArrayVar1() { return ArrayVar1[i]; }
-        public string GetArrayVar2() { return ArrayVar2[i]; }
-        public string GetArrayVar3() { return ArrayVar3[i]; }
-        public string GetArrayPicture() { return ArrayPicture[i]; }
+        public string GetArrayQuestion() { return arrayQuestions[i]; }
+        public string GetArrayRight() { return arrayRight[i]; }
+        public string GetArrayReccomend() { return arrayReccommend[i]; }
+        public string GetArrayVar1() { return arrayVar1[i]; }
+        public string GetArrayVar2() { return arrayVar2[i]; }
+        public string GetArrayVar3() { return arrayVar3[i]; }
+        public string GetArrayPicture() { return arrayPicture[i]; }
         public void GetNull() { i = 0; }
         public int GetNumberOfQuestions() { return questionBase.Count; }
         public int I () { return i; }
@@ -104,7 +106,6 @@ namespace TestApp.BLL
             }
             else
                 return count;
-
         }
 
     }

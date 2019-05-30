@@ -11,10 +11,12 @@ namespace TestApp.BLL
     {
         public static string Answer { get; set; }
         ExamSolutionBase solution = new ExamSolutionBase();
+
         public void SolutionPass()
         {
             solution.SolutionRight();
         }
+
         public void SolutionNotPass()
         {
             solution.SolutionNotRight();

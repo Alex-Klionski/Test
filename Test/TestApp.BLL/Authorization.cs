@@ -15,6 +15,7 @@ namespace TestApp.BLL
         {
 
         }
+
         public bool Login(string Login, string Password)
         {
             AuthorizationBase authorizationbase = new AuthorizationBase(out rightLogin, out rightPassword);
